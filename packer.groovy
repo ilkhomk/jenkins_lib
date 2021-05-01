@@ -33,7 +33,7 @@ node {
 		timestamps {
 			ws {
 				sh "packer version"
-				sh "packer build --var region=${REGION} tools/${TOOL}.json"
+				//sh "packer build --var region=${REGION} tools/${TOOL}.json"
 		}
 	}
 }
