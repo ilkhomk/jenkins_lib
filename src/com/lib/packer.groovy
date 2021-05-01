@@ -1,4 +1,4 @@
-def deploy(REPO) {
+def deploy(REPO, CHANNEL) {
 	node {
 		properties(
 			[parameters(
@@ -42,7 +42,7 @@ def deploy(REPO) {
 			timestamps {
 				ws {
 					echo "Slack"
-					//slackSend color: '#BADA55', message: 'Hello, World!'
+					//slackSend color: '#BADA55', message: 'Hello, World!' "$CHANNEL"
 				}
 			}
 		}
