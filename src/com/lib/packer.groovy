@@ -1,4 +1,4 @@
-def packer() {
+def deploy(REPO) {
 	node {
 		properties(
 			[parameters(
@@ -26,7 +26,7 @@ def packer() {
 			timestamps {
 				ws {
 					echo "Slack"
-				checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/farrukh90/packer.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: "REPO"]]])
 			}
 		}
 	}
